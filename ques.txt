@@ -1,0 +1,3 @@
+Expense management system, a lot of user capture reciepts for expenses they incur 
+during the travel.
+At the end they crrate an expenses out of the recipts to submit to the manager.

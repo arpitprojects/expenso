@@ -1,0 +1,25 @@
+{
+  "name": "expenso",
+  "version": "1.0.0",
+  "description": "A expenso app dashboard for CURD application",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-animate": "^1.6.5",
+    "angular-aria": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "angular-sanitize": "^1.6.5",
+    "chart.js": "^2.6.0",
+    "cors": "^2.8.4",
+    "express": "^4.15.3",
+    "highcharts": "^5.0.12",
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.99.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arpit",
+  "license": "MIT"
+}

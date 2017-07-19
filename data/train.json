@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "category" : "train",
+        "price" : 520,
+        "starting" : "howrah",
+        "ending" : "hyderabad",
+        "crn" : "prn000022",
+        "car" :"Duranto",
+        "coach" : "AC 1"
+    },
+    {
+        "id": 2,
+        "category" : "train",
+        "price" : 1023,
+        "starting" : "hyderabad",
+        "ending" : "banglore",
+        "crn" : "prn000022",
+        "car" :"Duranto",
+        "coach" : "AC 1"
+    },
+    {
+        "id": 3,
+        "category" : "train",
+        "price" : 895,
+        "starting" : "banglore",
+        "ending" : "patna",
+        "crn" : "prn000022",
+        "car" :"Duranto",
+        "coach" : "AC 1"
+    }
+]

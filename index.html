@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Expenso</title>
+        <!--All meta tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="Expenso"/>
+        <meta property="og:site_name" content="Expenso"/>
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="A Expenso keeps the bills and arrangement and curd features."/>
+        <meta property="og:type" content="website"/>
+        <meta property="article:author" content="https://www.facebook.com/mjarpitanand" />
+        <meta property="og:image" content="http://" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
+        <meta name="mobile-web-app-capable" content="yes"/>
+        <!--All seo meta tags -->
+        <!--Link favicon used form ipl site-->
+        <link rel="shortcut icon" href="">
+        <!--All icons-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--End of the all icons-->
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <!-- All css-->
+        <link rel="stylesheet" href="assests/css/materialize.min.css"/>
+        <link rel="stylesheet" href="build/css/reset.css"/>
+        <link rel="stylesheet" href="build/css/loader.css"/>
+        <link rel="stylesheet" href="build/css/main.css"/>
+        <link rel="stylesheet" href="node_modules/highcharts/css/highcharts.css"/>
+        <!--All Javascript file-->
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
+        <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+        <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+        <script src="node_modules/hammerjs/hammer.min.js"></script>
+        <script src="assests/js/jquery.min.js"></script>
+        <script src="assests/js/materialize.min.js"></script>
+        <script src="assests/js/jquery.copy-to-clipboard.js"></script>
+        <script src="build/js/jspdf.js"></script>
+        <script src="node_modules/highcharts/js/highcharts.js"></script>
+        <script src="node_modules/highcharts/js/modules/exporting.js"></script>
+        <!--Angular codes-->
+        <script src="app/module.js"></script>
+        <script src="app/route.js"></script>
+        <script src="/app/controller.js"></script>        
+        <script src="app/factory.js"></script>
+        <script src="/app/directives.js"></script>
+        <script src="/app/services.js"></script>
+
+        <!--Custom js-->
+        <script src="build/js/main.js"></script>
+        <script src="build/js/script.js"></script>
+        <body ng-app="expenso" ng-cloak id="body">
+
+            <div id="loader-wrapper">
+                <div id="loader"></div>        
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+            <nav class="nav-color fixed" style="background-color:white !important;position:fixed;z-index:99999999;">
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <span class="pull-left">
+                            <img src="build/img/logo.png" height="50" width="50" class="logo-img left" alt="logo" />
+                            <p class="logo-txt left">Expenso</p>
+                        </span>
+                        <ul class="req-input right">
+                            <li><input class="inputbox right" ng-model="search" placeholder="Filter Receipt" type="text" class="validate" id="song"/></li>
+                            <li><button class="waves-effect waves-light btn right" ng-click="addsong(inputurl)" id="addsong">Filter</button></li>
+                        </ul>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul id="slide-out" class="side-nav fixed background-nav manupilate">
+                <br/>
+                <div class="logo">
+                    <ul class="logo-text">
+                        <li class="width waves-effect waves-light"><a href="#/local">Taxi Travel Bills</a></li>
+                        <li class="width waves-effect waves-light"><a href="#/travel">Train Travel Bills</a></li>
+                        <li class="width waves-effect waves-light"><a href="#/analytics">Analytics</a></li>
+                    </ul>
+                </div>
+            </ul>
+            <br /><br />
+            <!-- Element Showed -->
+            <a id="menu" class="waves-effect waves-light btn btn-floating indigo darken-4"  onclick="$('.tap-target').tapTarget('open')" style="position: fixed;
+    bottom: 10px;
+    right: 10px;"><i class="material-icons">menu</i></a>
+            <!-- Tap Target Structure -->
+            <div class="tap-target blue darken-2" data-activates="menu">
+                <div class="tap-target-content">
+                    <!--Texts-->
+                    <p id="quick_add" style="color:white;font-size:15px;">Instructions</p>
+                    <br />
+                    <p style="color:white;">This web app doesnot have backend, Toggling over link, may cause loss of data.
+                    </p>
+                        
+                </div>
+            </div>
+            <ng-view></ng-view>
+        </body>
+    </head>
+</html>

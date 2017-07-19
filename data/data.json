@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "category" : "taxi",
+        "price" : 320,
+        "starting" : "howrah",
+        "ending" : "salt lake",
+        "crn" : "prn000022",
+        "car" :"prime sedan"
+    },
+    {
+        "id": 2,
+        "category" : "taxi",
+        "price" : 280,
+        "starting" : "howrah",
+        "ending" : "salt lake",
+        "crn" : "prn000022",
+        "car" :"prime sedan"
+    },
+    {
+        "id": 3,
+        "category" : "taxi",
+        "price" : 300,
+        "starting" : "howrah",
+        "ending" : "salt lake",
+        "crn" : "prn000022",
+        "car" :"prime sedan"
+    }
+]

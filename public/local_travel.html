@@ -1,0 +1,89 @@
+<br /><br /><br />
+<div class="container">
+    <div class="row">
+        <div class="col m3 offset-m2 s12 left">
+            <a data-target="modal1" id="clicking" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i>
+            </a>
+            <center>
+                {{error_empty}}
+            </center>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col m8 offset-m2 s12" ng-repeat="x in all_card_details | filter:search">
+
+            <div class="card" id="card">
+                <div class="card-content">
+
+                    <span class="card-title grey-text text-darken-4 pull-left"><i style="position: relative;
+                        top: 5px;" class="material-icons">drive_eta</i>&nbsp;&nbsp;&nbsp;&nbsp;{{x.car | uppercase}}</span>
+
+                    <span class="pull-right" style="font-size: 19px;font-family: 'Dosis';"><i style="position: relative;top: 5px;left: 6px;" class="material-icons">attach_money</i>{{x.price}}
+                        <a  ng-click="update(x)" style="position:relative;background-color: #1E5DFF;top:-30px;left:30px;" class="btn-floating waves-light waves-effect"><i class="material-icons">attach_file</i></a>
+                        <a ng-click="remove($index)" style="position:relative;top:-30px;left:30px;" class="btn-floating waves-light waves-effect"><i class="material-icons">close</i></a>
+                    </span>
+                    <span class="" style="clear:both;display:block;"></span>
+                    <br/>
+                    <div class="">
+                        <span class="pull-left"><i style="position:relative;top:4px;" class="material-icons">arrow_upward</i>{{x.starting | uppercase}} <i style="position:relative;top:4px;" class="material-icons">arrow_downward</i> {{x.ending | uppercase}}</span>
+                        <span class="pull-right" style="position: relative;top: 12px; font-weight:600;">{{x.crn | uppercase}}</span>
+                        <span class="" style="clear:both;display:block;"></span>
+                        <br />
+                    </div>
+                    <br/>
+                    <div class="inline-icons left">
+                        <ul class="icons">
+                            <li ng-click="demoFromHTML(x.price , x.starting , x.ending);"> <button style="border: 1px solid #333;"  class="waves-effect waves-light btn-flat">Export as pdf
+                                </button></li>
+                        </ul>
+                    </div>
+                    <span class="" style="clear:both;display:block;"></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                    <p></p>
+                </div>
+
+            </div>
+        </div>  
+    </div>
+</div>
+<div id="modal1" class="modal modal1">
+    <div class="modal-content">
+        <div class="row">
+            <div class="input-field col s6">
+                <input  id="taxi_name" placeholder="" type="text" ng-model="taxi_name" class="validate">
+                <label for="taxi_name">Taxi Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="price" type="number" placeholder="" ng-model="price" class="validate">
+                <label for="price">Price</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input  id="start" type="text" placeholder="" ng-model="start" class="validate">
+                <label for="start">Starting Point</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="end" type="text" placeholder="" ng-model="end" class="validate">
+                <label for="end">Ending Point</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="crn" type="text" placeholder="" ng-model="crn" class="validate">
+                <label for="crn">Crn No.</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <span ng-hide="true">{{index_pass}}</span>
+            <button class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="add()">Add</button>
+            <button class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="update_add(taxi_name, price, start , end, crn, index_pass)">Update</button>
+        </div>
+    </div>
+</div>
