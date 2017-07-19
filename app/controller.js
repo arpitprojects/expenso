@@ -21,6 +21,11 @@ expenso.filter('searchFor', function(){
 
 
 expenso.controller('travelController' , ['$scope','$rootScope','$http' ,'$sce', function($scope ,$rootScope, $http , $sce){
+    
+    $scope.modal_open = function(){
+        $('.modal1').modal('open');
+    }
+    
     $scope.demoFromHTML =  function(x , y , z) {
         console.log(x + y + z);
         var pdf = new jsPDF('p', 'pt', 'letter');
@@ -212,7 +217,11 @@ expenso.controller('anaController' , ['$scope','$rootScope','$http' ,'$sce', fun
 }]);
 
 expenso.controller('localTravelController' , ['$scope' ,'$rootScope' ,'$http' ,'$sce', function($scope, $rootScope , $http , $sce){
-
+    
+    
+    $scope.modal_open = function(){
+        $('.modal1').modal('open');
+    }
     $scope.demoFromHTML =  function(x , y , z) {
         console.log(x + y + z);
         var pdf = new jsPDF('p', 'pt', 'letter');
