@@ -53,37 +53,54 @@
 </div>
 <div id="modal1" class="modal modal1">
     <div class="modal-content">
-        <div class="row">
-            <div class="input-field col s6">
-                <input  id="taxi_name" placeholder="" type="text" ng-model="taxi_name" class="validate">
-                <label for="taxi_name">Taxi Name</label>
+        <form name="form">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  id="taxi_name"  placeholder="" type="text" ng-model="taxi_name" name="taxi_name" class="validate" required>
+                    <label for="taxi_name">Taxi Name</label>
+                    <div ng-messages="form.taxi_name.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input id="price" type="number" placeholder="" ng-model="price" name="price" class="validate" required>
+                    <label for="price">Price</label>
+                    <div ng-messages="form.price.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
             </div>
-            <div class="input-field col s6">
-                <input id="price" type="number" placeholder="" ng-model="price" class="validate">
-                <label for="price">Price</label>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="input-field col s6">
-                <input  id="start" type="text" placeholder="" ng-model="start" class="validate">
-                <label for="start">Starting Point</label>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  id="start" type="text" placeholder="" ng-model="start" name="start" class="validate" required>
+                    <label for="start">Starting Point</label>
+                    <div ng-messages="form.start.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input id="end" type="text" placeholder="" ng-model="end" name="end" class="validate" required>
+                    <label for="end">Ending Point</label>
+                    <div ng-messages="form.end.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
             </div>
-            <div class="input-field col s6">
-                <input id="end" type="text" placeholder="" ng-model="end" class="validate">
-                <label for="end">Ending Point</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="crn" type="text" placeholder="" ng-model="crn" name="crn" class="validate" required>
+                    <label for="crn">Crn No.</label>
+                    <div ng-messages="form.crn.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="crn" type="text" placeholder="" ng-model="crn" class="validate">
-                <label for="crn">Crn No.</label>
+            <div class="modal-footer">
+                <span ng-hide="true">{{index_pass}}</span>
+                <button style="border:1px solid #000;" class="modal-action modal-close waves-effect waves-green btn" ng-show="hide" ng-disabled="form.$invalid" ng-click="add()">Add</button>
+                <button style="border:1px solid #000;" class="modal-action modal-close waves-effect waves-green btn"   ng-disabled="form.$invalid" ng-show="show" ng-click="update_add(taxi_name, price, start , end, crn, index_pass)">Update</button>
             </div>
-        </div>
-        <div class="modal-footer">
-            <span ng-hide="true">{{index_pass}}</span>
-            <button class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="add()">Add</button>
-            <button class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="update_add(taxi_name, price, start , end, crn, index_pass)">Update</button>
-        </div>
+        </form>
     </div>
 </div>

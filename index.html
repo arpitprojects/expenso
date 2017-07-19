@@ -37,6 +37,7 @@
         <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
         <script src="node_modules/angular-animate/angular-animate.min.js"></script>
         <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+        <script src="node_modules/angular-messages/angular-messages.min.js"></script>
         <script src="node_modules/hammerjs/hammer.min.js"></script>
         <script src="assests/js/jquery.min.js"></script>
         <script src="assests/js/materialize.min.js"></script>
@@ -72,7 +73,7 @@
                         </span>
                         <ul class="req-input right">
                             <li><input class="inputbox right" ng-model="search" placeholder="Filter Receipt" type="text" class="validate" id="song"/></li>
-                            <li><button class="waves-effect waves-light btn right" ng-click="addsong(inputurl)" id="addsong">Filter</button></li>
+                            <li><a onclick="maxWindow()" class="waves-effect waves-block waves-light toggle-fullscreen"><i style="color:#000;" class="material-icons">desktop_windows</i></a></li>
                         </ul>
                     </ul>
                 </div>

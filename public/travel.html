@@ -38,9 +38,9 @@
                         <ul class="icons">
                             <li ng-click="demoFromHTML(x.price , x.starting , x.ending);"> <button style="border: 1px solid #333;"  class="waves-effect waves-light btn-flat">Export as pdf
                                 </button></li>
-<!--
-                            <li> <button style="border: 1px solid #333;"  class="waves-effect waves-light btn-flat">Save
-                                </button></li>
+                            <!--
+<li> <button style="border: 1px solid #333;"  class="waves-effect waves-light btn-flat">Save
+</button></li>
 -->
                         </ul>
                     </div>
@@ -59,41 +59,61 @@
 
 <div id="modal1" class="modal modal1">
     <div class="modal-content">
-        <div class="row">
-            <div class="input-field col s6">
-                <input  id="taxi_name" placeholder="" type="text" ng-model="taxi_name" class="validate">
-                <label for="taxi_name">Train Name</label>
+        <form name="form">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  id="taxi_name" placeholder="" type="text" ng-model="taxi_name" name="taxi_name" class="validate" required>
+                    <label for="taxi_name">Train Name</label>
+                    <div ng-messages="form.taxi_name.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input id="price" type="number" placeholder="" ng-model="price" name="price" class="validate" required>
+                    <label for="price">Price</label>
+                    <div ng-messages="form.price.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
             </div>
-            <div class="input-field col s6">
-                <input id="price" type="number" placeholder="" ng-model="price" class="validate">
-                <label for="price">Price</label>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="input-field col s6">
-                <input  id="start" type="text" placeholder="" ng-model="start" class="validate">
-                <label for="start">Starting Point</label>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  id="start" type="text" placeholder="" ng-model="start" name="start" class="validate" required>
+                    <label for="start">Starting Point</label>
+                    <div ng-messages="form.start.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input id="end" type="text" placeholder="" ng-model="end" name="end" class="validate" required>
+                    <label for="end">Ending Point</label>
+                    <div ng-messages="form.end.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
             </div>
-            <div class="input-field col s6">
-                <input id="end" type="text" placeholder="" ng-model="end" class="validate">
-                <label for="end">Ending Point</label>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="crn" type="text" placeholder="" ng-model="crn" name="crn" class="validate" required>
+                    <label for="crn">Crn No.</label>
+                    <div ng-messages="form.crn.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input id="tier" type="text" placeholder="" ng-model="tier" name="tier" class="validate" required>
+                    <label for="end">COACH</label>
+                    <div ng-messages="form.tier.$error">
+                        <div ng-message="required" class="r">This field is required</div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="crn" type="text" placeholder="" ng-model="crn" class="validate">
-                <label for="crn">Crn No.</label>
+            <div class="modal-footer">
+                <span ng-hide="true">{{index_all}}</span>
+                <button style="border:1px solid #000;" class="modal-action modal-close waves-effect waves-green btn-flat" ng-show="hide" ng-click="add()" ng-disabled="form.$invalid">Add</button>
+                <button style="border:1px solid #000;" class="modal-action modal-close waves-effect waves-green btn-flat" ng-show="show" ng-click="update_add(taxi_name , price, start, end, crn, tier,index_all)" ng-disabled="form.$invalid">update</button>
             </div>
-             <div class="input-field col s6">
-                <input id="tier" type="text" placeholder="" ng-model="tier" class="validate">
-                <label for="end">COACH</label>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <span ng-hide="true">{{index_all}}</span>
-            <button class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="add()">Add</button>
-            <button class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="update_add(taxi_name , price, start, end, crn, tier,index_all)">update</button>
-        </div>
+        </form>
     </div>
 </div>

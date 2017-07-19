@@ -23,6 +23,8 @@ expenso.filter('searchFor', function(){
 expenso.controller('travelController' , ['$scope','$rootScope','$http' ,'$sce', function($scope ,$rootScope, $http , $sce){
     
     $scope.modal_open = function(){
+        $scope.show=false;
+        $scope.hide = true;
         $('.modal1').modal('open');
     }
     
@@ -71,6 +73,8 @@ expenso.controller('travelController' , ['$scope','$rootScope','$http' ,'$sce', 
     }
 
     $scope.update = function(val){
+         $scope.show=true;
+        $scope.hide = false;
         var index = $scope.all_card_details.indexOf(val);
         console.log(index);
         console.log(val);
@@ -218,8 +222,10 @@ expenso.controller('anaController' , ['$scope','$rootScope','$http' ,'$sce', fun
 
 expenso.controller('localTravelController' , ['$scope' ,'$rootScope' ,'$http' ,'$sce', function($scope, $rootScope , $http , $sce){
     
-    
+   
     $scope.modal_open = function(){
+        $scope.show=false;
+        $scope.hide = true;
         $('.modal1').modal('open');
     }
     $scope.demoFromHTML =  function(x , y , z) {
@@ -267,6 +273,8 @@ expenso.controller('localTravelController' , ['$scope' ,'$rootScope' ,'$http' ,'
     }
 
     $scope.update = function(val){
+        $scope.show = true;
+        $scope.hide = false;
         var index = $scope.all_card_details.indexOf(val);
         console.log(index);
         console.log(val);

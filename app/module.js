@@ -1,1 +1,1 @@
-var expenso = angular.module('expenso' , ['ngRoute' , 'ngSanitize']);
+var expenso = angular.module('expenso' , ['ngRoute' , 'ngSanitize' , 'ngMessages']);

@@ -25,6 +25,9 @@ input{
     display: inline-block;
 
 }
+.r{
+    color:red;
+}
 #song{
     -webkit-appearance: none;
     background: #fff;
